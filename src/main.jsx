@@ -1,10 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.css"
+import App from './App'
+import NavbarComp from './components/NavbarComp'
+import Pong from './components/Pong'
+import About from './components/About'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <BrowserRouter>
+    <NavbarComp />
+    <Routes>
+      <Route exact path="/" element={<App />}/>
+      <Route path="/home" element={<App />}/>
+      <Route path="/pong" element={<Pong />}/>
+      <Route path="/about" element={<About />}/>
+    </Routes>
+  </BrowserRouter>,
 )
