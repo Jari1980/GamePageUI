@@ -11,14 +11,21 @@ const Pong = () => {
 
   return (
     <>
-    <h1>Pong</h1>
-      <Unity 
-      unityProvider={unityProvider} 
+      <h1>Pong</h1>
+      <div 
       style={{
-        height: 700,
-        width: 1000,
+        display: "flex",
+        justifyContent: "center"
       }}
-      />
+      >
+        <Unity
+          unityProvider={unityProvider}
+          style={{
+            height: 700,
+            width: 1000,
+          }}
+        />
+      </div>
     </>
   );
 };
