@@ -7,6 +7,7 @@ import NavbarComp from "./components/NavbarComp";
 import Pong from "./components/Pong";
 import About from "./components/About";
 import { CookiesProvider } from "react-cookie";
+import GamePage from "./components/GamePage";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -15,7 +16,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route path="/home" element={<App />} />
-        <Route path="/pong" element={<Pong />} />
+        <Route path="/gamepage" element={<GamePage />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </CookiesProvider>
