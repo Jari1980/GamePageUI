@@ -12,7 +12,7 @@ const NavbarComp = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto" style={{ marginRight: "20px" }}>
-              <Nav.Link as={Link} to="/pong">Pong</Nav.Link>
+              <Nav.Link as={Link} to="/gamepage">GamePage</Nav.Link>
               <Nav.Link as={Link} to="/about">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>

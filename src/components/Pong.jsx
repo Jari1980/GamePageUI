@@ -11,7 +11,6 @@ const Pong = () => {
 
   return (
     <>
-      <h1>Pong</h1>
       <div 
       style={{
         display: "flex",
