@@ -11,7 +11,7 @@ const CookieConsent = () => {
     }
 
     return (
-        <div style={{background: "yellow", padding: "20px", position: "fixed", width:"100%", textAlign: "center"}}> 
+        <div style={{background: "yellow", padding: "20px", position: "fixed", width:"100%", textAlign: "center", zIndex: "3"}}> 
             <h3>Cookie Consent</h3>
             <p>I dont use other cookies than this, my webprovider might so in good practice I let you, the user, know.</p>
             <Button style={{marginRight: "50px"}} onClick={giveCookieConsent}>Ok</Button>
