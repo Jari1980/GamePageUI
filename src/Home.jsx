@@ -20,9 +20,6 @@ const Home = () => {
           <div id="rain"></div>
         </div>
       ) : (
-        ""
-      )}
-      {dark !== "dark" ? (
         <div id="main" style={{background: bgColor}}>
           {!cookies.cookieConsent && <CookieConsent />}
           <h1 id="logo" data-text="Games">
@@ -30,8 +27,6 @@ const Home = () => {
           </h1>
           <div id="rain"></div>
         </div>
-      ) : (
-        ""
       )}
     </>
   );
