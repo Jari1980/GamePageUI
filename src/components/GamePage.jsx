@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import Pong from "./Pong";
+import { useGlobalContext } from "./context";
 
 const GamePage = () => {
   const [gameSelected, setGameSelected] = useState(false);
   const [runPong, setRunPong] = useState(false);
+  const { bgColor, setBgColor } = useGlobalContext();
+  const { dark, setDar } = useGlobalContext();
 
   function setAllgames() {
     setRunPong(false)
@@ -16,9 +19,10 @@ const GamePage = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
+        background: bgColor
       }}
     >
-      <h1 style={{marginTop: "40px"}}>Games</h1>
+      <h1 style={{marginTop: "40px", color: "#0f0"}}>Games</h1>
       <div style={{ flexBasis: "100%", height: "40px" }}></div>
       {!gameSelected ? (
         <div>
