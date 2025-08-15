@@ -9,6 +9,7 @@ import About from "./components/About";
 import { CookiesProvider } from "react-cookie";
 import GamePage from "./components/GamePage";
 import { GlobalProvider } from "./components/context.jsx";
+import Register from "./components/Register.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/home" element={<Home />} />
           <Route path="/gamepage" element={<GamePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </CookiesProvider>
     </GlobalProvider>
