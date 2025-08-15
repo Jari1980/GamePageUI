@@ -2,11 +2,13 @@ import React from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "./context";
+import { useCookies } from "react-cookie";
 
 const NavbarComp = () => {
 
   const {bgColor, setBgColor} = useGlobalContext();
   const {dark, setDark} = useGlobalContext();
+  const [cookies, setCookie] = useCookies(["jwtToken"]);
 
   function toggleColorMode() {
     if(dark === "dark") {
@@ -29,8 +31,10 @@ const NavbarComp = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto" style={{ marginRight: "20px" }}>
-              <Nav.Link as={Link} to="/gamepage">GamePage</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link style={{marginRight:"40px"}} as={Link} to="/gamepage">GamePage</Nav.Link>
+              {cookies.jwtToken == "" || cookies.jwtToken == null ?(
+                <Nav.Link as={Link} to="/register">Register</Nav.Link>
+              ) : "" }
             </Nav>
           </Navbar.Collapse>
       </Navbar>

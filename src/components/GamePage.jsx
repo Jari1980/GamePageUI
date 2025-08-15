@@ -7,7 +7,6 @@ const GamePage = () => {
   const [gameSelected, setGameSelected] = useState(false);
   const [runPong, setRunPong] = useState(false);
   const { bgColor, setBgColor } = useGlobalContext();
-  const { dark, setDar } = useGlobalContext();
 
   function setAllgames() {
     setRunPong(false);
