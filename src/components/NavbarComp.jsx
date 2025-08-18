@@ -35,6 +35,9 @@ const NavbarComp = () => {
               {cookies.jwtToken == "" || cookies.jwtToken == null ?(
                 <Nav.Link as={Link} to="/register">Register</Nav.Link>
               ) : "" }
+              {cookies.jwtToken == "" || cookies.jwtToken == null ?(
+                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              ) : "" }
             </Nav>
           </Navbar.Collapse>
       </Navbar>

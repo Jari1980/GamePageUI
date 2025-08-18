@@ -5,14 +5,13 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const { bgColor, setBgColor } = useGlobalContext();
   const [cookies, setCookie] = useCookies(["jwtToken"]);
   const { dark, setDark } = useGlobalContext();
   const navigate = useNavigate();
 
-
-  function register(event) {
+  function login(event) {
     event.preventDefault();
     const userData = {
       username: event.currentTarget.elements.formUserName.value,
@@ -21,31 +20,18 @@ const Register = () => {
     try {
       axios
         .post(
-          "https://gameapiauth-acakapc8cxadgtf5.swedencentral-01.azurewebsites.net/api/Authentication/register",
+          "https://gameapiauth-acakapc8cxadgtf5.swedencentral-01.azurewebsites.net/api/Authentication/login",
           {
-            userName: event.currentTarget.elements.formUserName.value,
-            password: event.currentTarget.elements.formPassword.value,
+            userName: userData.username,
+            password: userData.password,
           }
         )
-        .then(() => {
-          axios
-            .post(
-              "https://gameapiauth-acakapc8cxadgtf5.swedencentral-01.azurewebsites.net/api/Authentication/login",
-              {
-                userName: userData.username,
-                password: userData.password,
-              }
-            )
-            .then((response) => {
-              setCookie("jwtToken", response.data.jwtToken, { path: "/" });
-              navigate("/");
-            });
-        })
-        .catch((error) => {
-          console.log("Error logging in" + error);
+        .then((response) => {
+          setCookie("jwtToken", response.data.jwtToken, { path: "/" });
+          navigate("/");
         });
     } catch (error) {
-      console.log("Error registering: " + error);
+      console.log("Error logging in: " + error);
     }
   }
 
@@ -65,14 +51,14 @@ const Register = () => {
         }}
       >
         {dark == "dark" ? (
-          <h1 style={{ color: "whitesmoke" }}>Register</h1>
+          <h1 style={{ color: "whitesmoke" }}>Login</h1>
         ) : (
-          <h1 style={{ color: "black" }}>Register</h1>
+          <h1 style={{ color: "black" }}>Login</h1>
         )}
 
         <br />
         <br />
-        <Form onSubmit={register}>
+        <Form onSubmit={login}>
           <Form.Group className="mb-3" controlId="formUserName">
             <Form.Label>
               {dark == "dark" ? (
@@ -99,7 +85,7 @@ const Register = () => {
             type="submit"
             className="extButton"
           >
-            Register and Login
+            Login
           </Button>
         </Form>
       </Container>
@@ -107,4 +93,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
