@@ -3,11 +3,11 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - deploying3
+      - main
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - deploying3
+      - main
 
 jobs:
   build_and_deploy_job:
@@ -44,3 +44,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_HAPPY_TREE_02513A203 }}
           action: "close"
+
