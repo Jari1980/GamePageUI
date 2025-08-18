@@ -9,6 +9,7 @@ const Register = () => {
   const [cookies, setCookie] = useCookies(["jwtToken"]);
   const { dark, setDark } = useGlobalContext();
 
+  
   function register(event) {
     event.preventDefault();
     const userData = {
