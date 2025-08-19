@@ -10,6 +10,8 @@ const NavbarComp = () => {
   const { dark, setDark } = useGlobalContext();
   const [cookies, setCookie] = useCookies(["jwtToken"]);
   const navigate = useNavigate();
+  const {logged, setLogged} = useGlobalContext();
+  const {userName, setUserName} = useGlobalContext();
 
   function toggleColorMode() {
     if (dark === "dark") {
@@ -23,6 +25,7 @@ const NavbarComp = () => {
 
   function logout(){
     setCookie("jwtToken", "", { path: "/" });
+    setLogged(false);
     navigate("/");
   }
 
@@ -41,20 +44,20 @@ const NavbarComp = () => {
             <Nav.Link style={{ marginRight: "40px" }} as={Link} to="/gamepage">
               GamePage
             </Nav.Link>
-            {cookies.jwtToken == "" || cookies.jwtToken == null ? (
+            {!logged ? (
               <Nav.Link as={Link} to="/register">
                 Register
               </Nav.Link>
             ) : (
               ""
             )}
-            {cookies.jwtToken == "" || cookies.jwtToken == null ? (
+            {!logged ? (
               <Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
             ) : (
               <Nav.Link onClick={() => logout()}>
-                Logout
+                {userName} Logout
               </Nav.Link>
             )}
           </Nav>

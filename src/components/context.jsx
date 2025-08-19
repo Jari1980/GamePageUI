@@ -7,6 +7,8 @@ export const GlobalProvider = ({ children }) => {
     "linear-gradient(to bottom, #121212, #333 60%, #eee 85%)"
   );
   const [dark, setDark] = useState("dark")
+  const [logged, setLogged] = useState(false)
+  const [userName, setUserName] = useState("")
 
   return (
     <GlobalContext.Provider
@@ -14,7 +16,11 @@ export const GlobalProvider = ({ children }) => {
         bgColor,
         setBgColor,
         dark,
-        setDark
+        setDark,
+        logged,
+        setLogged,
+        userName,
+        setUserName
       }}
     >
       {children}
