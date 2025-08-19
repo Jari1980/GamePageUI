@@ -10,6 +10,8 @@ const Login = () => {
   const [cookies, setCookie] = useCookies(["jwtToken"]);
   const { dark, setDark } = useGlobalContext();
   const navigate = useNavigate();
+  const {logged, setLogged} = useGlobalContext();
+  const {userName, setUserName} = useGlobalContext();
 
   function login(event) {
     event.preventDefault();
@@ -28,6 +30,8 @@ const Login = () => {
         )
         .then((response) => {
           setCookie("jwtToken", response.data.jwtToken, { path: "/" });
+          setLogged(true);
+          setUserName(userData.username);
           navigate("/");
         });
     } catch (error) {

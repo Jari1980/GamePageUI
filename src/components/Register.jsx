@@ -10,6 +10,8 @@ const Register = () => {
   const [cookies, setCookie] = useCookies(["jwtToken"]);
   const { dark, setDark } = useGlobalContext();
   const navigate = useNavigate();
+  const {logged, setLogged} = useGlobalContext();
+  const {userName, setUserName} = useGlobalContext();
 
 
   function register(event) {
@@ -38,6 +40,8 @@ const Register = () => {
             )
             .then((response) => {
               setCookie("jwtToken", response.data.jwtToken, { path: "/" });
+              setLogged(true);
+              setUserName(userData.username);
               navigate("/");
             });
         })
