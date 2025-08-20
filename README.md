@@ -1,12 +1,21 @@
-# React + Vite
+<h1>Simple game page</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>This application uses imported Unity build files in order to run games in browser, at moment I have one game Pong upp and running, I might create more later on.</p>
+<p>There is a register/login and logout option, which uses login API created with c#. No need to login or registre to try out games section.</p>
+<p>In this appliation I use two cookies, one time based (1 day) for cookie consent, and one session based for JWT token.</p>
+<p>I use global context for light/dark mode, username and boolean for logged as state.</p>
+<br/>
+<p>Project uses the following dependencies:</p>
+<li>axios</li>
+<li>bootstrap</li>
+<li>react</li>
+<li>react-bootstrap</li>
+<li>react-cookie</li>
+<li>react-dom</li>
+<li>react-router-dom</li>
+<li>react-unity-webgl</li>
+<p>These can be installed by running the command "npm i"</p>
+<br/>
+<p>I deployed this project on Azure static site and used generated workflow in order to progress ci/cd way. My login/auth API is running as webapp in Azure.</p>
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img width="1725" height="1016" alt="GamepageLogin" src="https://github.com/user-attachments/assets/b36f8214-cdd2-40ea-b88d-d5561e52cdc7" />
