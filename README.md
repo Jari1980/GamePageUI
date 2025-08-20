@@ -18,5 +18,5 @@
 <br/>
 <p>I deployed this project as Azure static site and used generated workflow in order to progress ci/cd way. My login/auth API is running as webapp in Azure.</p>
 <br/>
-<p>Homepage after user accept cookieconsent and loggs in:</p>
+<p>Homepage, in darkmode, after user accept cookieconsent and loggs in:</p>
 <img width="1725" height="1016" alt="GamepageLogin" src="https://github.com/user-attachments/assets/b36f8214-cdd2-40ea-b88d-d5561e52cdc7" />
